@@ -1,50 +1,42 @@
 body {
-  font-family: serif;
-  background-color: white;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.current-time {
-  text-align: center;
-}
-
-#date {
-  color: mediumvioletred;
-}
-
-#time {
-  color: mediumvioletred;
-  font-size: 24px;
-}
-
-body {
-  font-family: sans-serif;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: teal; /* Warna latar belakang untuk teks bulan */
-}
-
-.countdown-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.countdown-section {
-  background-color: steelblue; /* Warna latar belakang untuk teks tahun */
-  color: white;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
   padding: 20px;
-  margin: 10px;
-  text-align: center;
 }
 
-.countdown {
-  font-size: 24px;
+.serif {
+  font-family: serif;
+  color: mediumvioletred;
+}
+
+.teal {
+  background-color: teal;
+  color: white;
+}
+
+.steelblue {
+  background-color: steelblue;
+  color: white;
+}
+
+.monospace {
+  font-family: monospace;
+}
+
+/* Add responsive design for different devices */
+/* For example: */
+@media only screen and (max-width: 600px) {
+  /* Adjust font sizes or layout for smaller screens */
+  .container {
+    padding: 10px;
+  }
+  /* Add more responsive styles as needed */
 }
