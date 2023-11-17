@@ -1,0 +1,22 @@
+body {
+  font-family: serif;
+  background-color: white;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.current-time {
+  text-align: center;
+}
+
+#date {
+  color: mediumvioletred;
+}
+
+#time {
+  color: mediumvioletred;
+  font-size: 24px;
+}
