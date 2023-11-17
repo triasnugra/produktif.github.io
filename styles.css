@@ -20,3 +20,31 @@ body {
   color: mediumvioletred;
   font-size: 24px;
 }
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: teal; /* Warna latar belakang untuk teks bulan */
+}
+
+.countdown-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown-section {
+  background-color: steelblue; /* Warna latar belakang untuk teks tahun */
+  color: white;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+}
+
+.countdown {
+  font-size: 24px;
+}
