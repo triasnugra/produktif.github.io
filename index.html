@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productivity Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: mediumvioletred;
+      text-align: center;
+    }
+    .timer {
+      font-family: serif;
+      background-color: white;
+      color: mediumvioletred;
+    }
+    .month-countdown {
+      font-family: sans-serif;
+      background-color: teal;
+      color: white;
+    }
+    .year-countdown {
+      font-family: sans-serif;
+      background-color: steelblue;
+      color: white;
+    }
+    .quotes {
+      font-family: monospace;
+      margin-top: 20px;
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+    .chart {
+      margin-top: 20px;
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="timer">
+    <h2>Hari, Tanggal & Jam saat ini</h2>
+    <!-- Placeholder for current date & time -->
+    <p id="currentDateTime"></p>
+  </div>
+  <div class="month-countdown">
+    <h3>Countdown sisa hari di bulan ini</h3>
+    <!-- Placeholder for month countdown -->
+    <p id="monthCountdown"></p>
+  </div>
+  <div class="year-countdown">
+    <h3>Countdown sisa hari dalam tahun ini</h3>
+    <!-- Placeholder for year countdown -->
+    <p id="yearCountdown"></p>
+  </div>
+  <div class="quotes">
+    <h3>Quotes Penyemangat</h3>
+    <!-- Placeholder for motivational quotes -->
+    <p id="quote"></p>
+  </div>
+  <div class="buttons">
+    <h3>Input Produktivitas</h3>
+    <button onclick="inputProductivity('0')" style="background-color: crimson">Tidak Produktif (0 poin)</button>
+    <button onclick="inputProductivity('5')" style="background-color: orange">Sedikit Produktif (5 poin)</button>
+    <button onclick="inputProductivity('20')" style="background-color: LimeGreen">Sangat Produktif (20 poin)</button>
+  </div>
+  <div class="chart">
+    <h3>Line Chart</h3>
+    <!-- Placeholder for charts -->
+    <canvas id="monthlyChart" width="600" height="400"></canvas>
+    <canvas id="yearlyChart" width="600" height="400"></canvas>
+  </div>
+
+  <script>
+    // Function to update current date & time
+    function updateDateTime() {
+      const now = new Date();
+      document.getElementById('currentDateTime').innerHTML = now.toLocaleString();
+    }
+
+    // Function to update month countdown
+    function updateMonthCountdown() {
+      // Calculate remaining days in the month
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = now.getMonth() + 1;
+      const daysInMonth = new Date(year, month, 0).getDate();
+      const daysLeft = daysInMonth - now.getDate() + 1;
+
+      document.getElementById('monthCountdown').innerHTML = `Sisa hari: ${daysLeft}`;
+    }
+
+    // Function to update year countdown
+    function updateYearCountdown() {
+      const now = new Date();
+      const year = now.getFullYear();
+      const yearEndDate = new Date(year, 11, 31);
+      const daysLeft = Math.ceil((yearEndDate - now) / (1000 * 60 * 60 * 24));
+
+      document.getElementById('yearCountdown').innerHTML = `Sisa hari: ${daysLeft}`;
+    }
+
+    // Function to display motivational quotes
+    const quotes = [
+      "Quote 1",
+      "Quote 2",
+      "Quote 3"
+      // Add more quotes as needed
+    ];
+    let currentQuoteIndex = 0;
+
+    function displayQuote() {
+      document.getElementById('quote').innerHTML = quotes[currentQuoteIndex];
+      currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+    }
+
+    // Function to input productivity
+    function inputProductivity(points) {
+      const password = prompt("Masukkan password:");
+      if (password === "4sgr4irene") {
+        // Handle productivity input here, update charts, etc.
+        alert(`Anda mendapat ${points} poin untuk hari ini!`);
+      } else {
+        alert("Password salah!");
+      }
+    }
+
+    // Function to draw charts (using a library like Chart.js)
+    function drawCharts() {
+      // Code to draw monthly and yearly charts using Chart.js or any other library
+      // Example:
+      // Draw monthly chart
+      const monthlyChart = new Chart(document.getElementById('monthlyChart'), {
+        type: 'line',
+        data: {
+          // Data for monthly chart
+        },
+        options: {
+          // Options for monthly chart
+        }
+      });
+
+      // Draw yearly chart
+      const yearlyChart = new Chart(document.getElementById('yearlyChart'), {
+        type: 'line',
+        data: {
+          // Data for yearly chart
+        },
+        options: {
+          // Options for yearly chart
+        }
+      });
+    }
+
+    // Initial function calls
+    updateDateTime();
+    updateMonthCountdown();
+    updateYearCountdown();
+    displayQuote();
+    drawCharts();
+
+    // Update time every second
+    setInterval(updateDateTime, 1000);
+    // Change quote every 5 seconds
+    setInterval(displayQuote, 5000);
+  </script>
+</body>
+</html>
