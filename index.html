@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productivity Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="current-time">
+      <h1 id="currentDateTime" class="serif-text mediumvioletred"></h1>
+    </div>
+    <div class="countdowns">
+      <div class="countdown-month sans-text teal">
+        <h2>Countdown Bulan Ini</h2>
+        <p id="countdownMonth"></p>
+      </div>
+      <div class="countdown-year sans-text steelblue">
+        <h2>Countdown Tahun Ini</h2>
+        <p id="countdownYear"></p>
+      </div>
+    </div>
+    <div class="quotes monospace-text">
+      <h2>Inspirational Quotes</h2>
+      <p id="quote"></p>
+    </div>
+    <div class="productivity-buttons">
+      <h2>Input Produktivitas</h2>
+      <button onclick="inputProductivity('0')" class="crimson"></button>
+      <button onclick="inputProductivity('5')" class="orange"></button>
+      <button onclick="inputProductivity('20')" class="limegreen"></button>
+    </div>
+    <div class="charts">
+      <h2>Line Chart</h2>
+      <!-- Placeholder for charts -->
+      <div class="chart-month"></div>
+      <div class="chart-year"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
 
