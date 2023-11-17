@@ -1,48 +1,27 @@
-// Function to display current date and time
-function showDateTime() {
-  const now = new Date();
-  const dateTime = now.toLocaleString();
-  document.getElementById('currentDateTime').textContent = dateTime;
+// Hari, Tanggal, & Jam
+
+function getHari() {
+  var hari = new Date().getDay();
+  var hariIndonesia = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+  return hariIndonesia[hari];
 }
 
-// Function to calculate and display countdowns
-function showCountdowns() {
-  // Implement countdown logic for months and years here
-  // Example:
-  const countdownMonth = 15; // Replace with calculated days
-  const countdownYear = 150; // Replace with calculated days
-  document.getElementById('countdownMonth').textContent = `Sisa hari bulan ini: ${countdownMonth}`;
-  document.getElementById('countdownYear').textContent = `Sisa hari tahun ini: ${countdownYear}`;
+function getTanggal() {
+  var tanggal = new Date().getDate();
+  return tanggal;
 }
 
-// Function to display inspirational quotes
-function showQuotes() {
-  const quotes = ["Quote 1", "Quote 2", "Quote 3"]; // Replace with actual quotes
-  let index = 0;
-
-  setInterval(() => {
-    document.getElementById('quote').textContent = quotes[index];
-    index = (index + 1) % quotes.length;
-  }, 5000);
+function getJam() {
+  var jam = new Date().getHours();
+  var menit = new Date().getMinutes();
+  var detik = new Date().getSeconds();
+  return jam + ":" + menit + ":" + detik;
 }
 
-// Function to input productivity
-function inputProductivity(points) {
-  const password = prompt("Masukkan password:");
-  if (password === '4sgr4irene') {
-    // Implement logic to record productivity points
-    // You can store this data in an array or use a database
-    // Example: Store points in an array
-    // Replace this with actual logic to store data
-    const productivityData = []; 
-    productivityData.push(Number(points));
-    console.log(`Produktivitas hari ini: ${points} poin`);
-  } else {
-    alert("Password salah!");
-  }
-}
+// Countdown sisa hari di setiap bulannya
 
-// Function calls
-showDateTime();
-showCountdowns();
-showQuotes();
+function getCountdownSisaHariBulan() {
+  var tanggal = new Date();
+  var bulan = tanggal.getMonth();
+  var hari = tanggal.getDate();
+  var akhirBulan = new Date(tanggal.getFullYear(), bulan + 1, 0
